@@ -1,7 +1,8 @@
 //Function to do insertion sort
-FUNCTION Ins_sort(VAR arr : ARRAY_OF INTEGER[]) : ARRAY_OF INTEGER[]
+FUNCTION Ins_sort(VAR arr : ARRAY_OF FLOAT[]) : ARRAY_OF FLOAT[]
 VAR
-    i, j, key : INTEGER;
+    i, j : INTEGER;
+    key : FLOAT;
     
 BEGIN
     FOR i FROM 1 TO arr.length STEP 1  DO
@@ -22,7 +23,7 @@ END
 ALGORITHM Insertion_sorting
 VAR
     i, n : INTEGER;
-    ar : ARRAY_OF INTEGER[];
+    ar : ARRAY_OF FLOAT[];
 BEGIN
 
     // Filling the array to sort
