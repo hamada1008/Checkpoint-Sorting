@@ -1,0 +1,46 @@
+//Function to do insertion sort
+FUNCTION Ins_sort(VAR arr : ARRAY_OF INTEGER[]) : ARRAY_OF INTEGER[]
+VAR
+    i, j, key : INTEGER;
+    
+BEGIN
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        key := arr[i];
+        j := i - 1;
+        WHILE ((j >= 0) AND (key < arr[j])) DO
+            arr[j + 1] := arr[j];
+            j := j - 1 ;
+            arr[j + 1] = key ;
+        END_WHILE
+    END_FOR
+
+    RETURN arr ;
+END
+
+
+
+ALGORITHM Insertion_sorting
+VAR
+    i, n : INTEGER;
+    ar : ARRAY_OF INTEGER[];
+BEGIN
+
+    // Filling the array to sort
+    REPEAT
+        Write ("please enter the length of the array");
+        Read (n);
+
+    UNTIL (n > 0)
+
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Write("Please enter the value of", i+1);
+        Read(ar[i]);
+    END_FOR
+
+    //Sorting & printing the array
+    
+    ar := Ins_sort(ar);
+    Write("The array after sorting is:", ar);
+ 
+
+END
